@@ -6,6 +6,7 @@ WORKDIR /usr/src/node-red
 USER root
 
 RUN apt-get update && apt-get install -y jq
+RUN cd /data && npm install node-red-contrib-home-assistant
 
 # Expose tcp/1880
 EXPOSE 1880
