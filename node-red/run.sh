@@ -22,5 +22,8 @@ else
     sed -i "s/.*cert: fs.readFileSync/    \/\/    cert: fs.readFileSync/g" /data/settings.js
 fi
 
+[ -d /data/node_modules/node-red-contrib-home-assistant ] || { \
+    cd /data && npm install node-red-contrib-home-assistant ; }
+
 cd /usr/src/node-red
 npm start -- --userDir /data
